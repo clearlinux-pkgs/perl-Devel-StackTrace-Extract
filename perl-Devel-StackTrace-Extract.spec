@@ -5,12 +5,13 @@
 #
 Name     : perl-Devel-StackTrace-Extract
 Version  : 1.000000
-Release  : 1
+Release  : 2
 URL      : https://cpan.metacpan.org/authors/id/M/MA/MAXMIND/Devel-StackTrace-Extract-1.000000.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/M/MA/MAXMIND/Devel-StackTrace-Extract-1.000000.tar.gz
 Summary  : 'Extract a stack trace from an exception object'
 Group    : Development/Tools
-License  : Artistic-1.0-Perl
+License  : Artistic-1.0 Artistic-1.0-Perl GPL-1.0
+Requires: perl-Devel-StackTrace-Extract-license = %{version}-%{release}
 Requires: perl-Devel-StackTrace-Extract-perl = %{version}-%{release}
 BuildRequires : buildreq-cpan
 BuildRequires : perl(Devel::StackTrace)
@@ -31,6 +32,14 @@ Requires: perl-Devel-StackTrace-Extract = %{version}-%{release}
 
 %description dev
 dev components for the perl-Devel-StackTrace-Extract package.
+
+
+%package license
+Summary: license components for the perl-Devel-StackTrace-Extract package.
+Group: Default
+
+%description license
+license components for the perl-Devel-StackTrace-Extract package.
 
 
 %package perl
@@ -68,6 +77,8 @@ make TEST_VERBOSE=1 test
 
 %install
 rm -rf %{buildroot}
+mkdir -p %{buildroot}/usr/share/package-licenses/perl-Devel-StackTrace-Extract
+cp %{_builddir}/Devel-StackTrace-Extract-%{version}/LICENSE %{buildroot}/usr/share/package-licenses/perl-Devel-StackTrace-Extract/6dc8469576e79fb276656dcca354a3d87bd53057 || :
 if test -f Makefile.PL; then
 make pure_install PERL_INSTALL_ROOT=%{buildroot} INSTALLDIRS=vendor
 else
@@ -84,6 +95,10 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 %files dev
 %defattr(-,root,root,-)
 /usr/share/man/man3/Devel::StackTrace::Extract.3
+
+%files license
+%defattr(0644,root,root,0755)
+/usr/share/package-licenses/perl-Devel-StackTrace-Extract/6dc8469576e79fb276656dcca354a3d87bd53057
 
 %files perl
 %defattr(-,root,root,-)
