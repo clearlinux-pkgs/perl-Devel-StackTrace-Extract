@@ -1,3 +1,4 @@
 1.000000
 perl(Devel::StackTrace)
 perl(Devel::StackTrace::Frame)
+perl(Getopt::Long)
