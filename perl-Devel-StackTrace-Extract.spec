@@ -7,7 +7,7 @@
 #
 Name     : perl-Devel-StackTrace-Extract
 Version  : 1.000000
-Release  : 5
+Release  : 6
 URL      : https://cpan.metacpan.org/authors/id/M/MA/MAXMIND/Devel-StackTrace-Extract-1.000000.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/M/MA/MAXMIND/Devel-StackTrace-Extract-1.000000.tar.gz
 Summary  : 'Extract a stack trace from an exception object'
